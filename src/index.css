@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 224 71% 4%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 221 83% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 96%;
+
+    --muted: 223 47% 10%;
+    --muted-foreground: 215 16% 70%;
+
+    --popover: 222 47% 5%;
+    --popover-foreground: 213 31% 96%;
+
+    --card: 222 47% 5%;
+    --card-foreground: 213 31% 96%;
+
+    --border: 223 47% 12%;
+    --input: 223 47% 12%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 222 47% 10%;
+
+    --secondary: 222 47% 9%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 14%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 217 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300 antialiased font-sans;
+  }
+
+  input,
+  textarea,
+  button,
+  select {
+    @apply text-foreground;
+    font-family: inherit;
+    color: inherit;
+  }
+}
+
+/* ReactFlow Customizations */
+.react-flow__background {
+  opacity: 0.4;
+}
+
+.react-flow__handle {
+  width: 12px !important;
+  height: 12px !important;
+  border-width: 2px !important;
+  border-color: hsl(var(--background)) !important;
+  background-color: hsl(var(--primary)) !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.1);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms;
+  cursor: crosshair;
+  z-index: 100;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.4) !important;
+  background-color: hsl(var(--foreground)) !important;
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--primary) / 0.6);
+  stroke-width: 2.5px;
+  transition: stroke 150ms;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: hsl(var(--primary));
+  stroke-width: 4px;
+}
+
+.react-flow__controls {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+.react-flow__controls-button {
+  background-color: transparent !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  margin: 0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: hsl(var(--foreground));
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.react-flow__controls-button svg {
+  fill: currentColor !important;
+}
+
+.react-flow__minimap {
+  background-color: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.25);
+  border-radius: 9999px;
+  transition: background-color 150ms;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.45);
+}
+
+/* Modern Utilities */
+.glass {
+  background-color: hsl(var(--card) / 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.dark .glass {
+  background-color: rgb(0 0 0 / 0.45);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}

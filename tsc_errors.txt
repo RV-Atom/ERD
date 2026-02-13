@@ -1,0 +1,10 @@
+src/components/Canvas.tsx(31,62): error TS7006: Parameter 'entity' implicitly has an 'any' type.
+src/components/Canvas.tsx(45,67): error TS7006: Parameter 'rel' implicitly has an 'any' type.
+src/components/PropertiesPanel.tsx(16,50): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/PropertiesPanel.tsx(148,53): error TS7006: Parameter 'field' implicitly has an 'any' type.
+src/components/PropertiesPanel.tsx(148,60): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.10.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.10.0
+npm notice To update run: npm install -g npm@11.10.0
+npm notice

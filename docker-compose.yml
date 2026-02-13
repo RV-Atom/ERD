@@ -1,0 +1,27 @@
+services:
+  erd-designer:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8085:8085"
+    volumes:
+      - ./projects:/app/projects
+    restart: unless-stopped
+
+  erd-designer-dev:
+    build:
+      context: .
+      target: build
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    command: npm run dev -- --host
+    environment:
+      - NODE_ENV=development
+    # Ensure the container stays running for interactive use if needed
+    stdin_open: true
+    tty: true
