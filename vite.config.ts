@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   // CRITICAL FIX: Set base path for GitHub Pages subdirectory
-  base: '/ERD/',  // Must match your repository name exactly
+  base: '/',  // Must match your repository name exactly
   
   plugins: [
     react(),
@@ -18,15 +18,15 @@ export default defineConfig({
         theme_color: '#3b82f6',
         background_color: '#111827',
         display: 'standalone',
-        start_url: '/ERD/',  // Include base path
+        start_url: '/',  // Include base path
         icons: [
           {
-            src: '/ERD/icons/icon-192.png',  // Include base path in icons
+            src: '/icons/icon-192.png',  // Include base path in icons
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/ERD/icons/icon-512.png',
+            src: '/icons/icon-512.png',
             sizes: '512x512',
             type: 'image/png'
           }
