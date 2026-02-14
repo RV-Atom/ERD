@@ -5,6 +5,5 @@ dist
 .vscode
 coverage
 build
-package-lock.json
 *.log
 autosaves
