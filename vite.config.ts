@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   // CRITICAL FIX: Set base path for GitHub Pages subdirectory
-  base: '/',  // Must match your repository name exactly
+  base: '/ERD/',  // Must match your repository name exactly
   
   plugins: [react()],
   
